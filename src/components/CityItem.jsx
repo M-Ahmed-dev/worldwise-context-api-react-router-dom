@@ -39,8 +39,8 @@ CityItem.propTypes = {
     date: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     position: PropTypes.shape({
-      lat: PropTypes.number.isRequired,
-      lng: PropTypes.number.isRequired,
+      lat: PropTypes.string.isRequired,
+      lng: PropTypes.string.isRequired,
     }),
   }),
 };
