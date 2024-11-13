@@ -1,5 +1,4 @@
-import { useReducer } from "react";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext();
 
@@ -8,7 +7,7 @@ const initialState = {
   isAuthenticated: false,
 };
 
-function reducer(action, state) {
+function reducer(state, action) {
   switch (action.type) {
     case "login":
       return {
@@ -16,11 +15,23 @@ function reducer(action, state) {
         user: action.payload,
         isAuthenticated: true,
       };
-
     case "logout":
       return { ...state, user: null, isAuthenticated: false };
+    default:
+      throw new Error("Unknown Action");
   }
 }
+
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "login":
+//       return { ...state, user: action.payload, isAuthenticated: true };
+//     case "logout":
+//       return { ...state, user: null, isAuthenticated: false };
+//     default:
+//       throw new Error("Unknown action");
+//   }
+// }
 
 const FAKE_USER = {
   name: "Ahmad",
@@ -50,16 +61,17 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={(user, isAuthenticated, login, logout)}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
-function useAuthConsumer() {
+function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined)
     throw new Error("AuthContext was used outside AuthProvider");
+  return context;
 }
 
-export { AuthProvider, useAuthConsumer };
+export { AuthProvider, useAuth };
