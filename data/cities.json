@@ -1,52 +1,52 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
+      "id": "685b",
       "cityName": "Madrid",
-      "country": "Spain",
+      "countryName": "Spain",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
+      "date": "2024-11-13T08:11:09.472Z",
+      "notes": "VISITED",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": "40.38002840251183",
+        "lng": "-3.6914062500000004"
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "1149",
+      "cityName": "Reuilly",
+      "countryName": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-11-13T08:11:19.159Z",
+      "notes": "TEST",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+        "lat": "47.07012182383309",
+        "lng": "2.0214843750000004"
+      }
     },
     {
+      "id": "d3f7",
+      "cityName": "Mondorf-les-Bains",
+      "countryName": "Luxembourg",
+      "emoji": "🇱🇺",
+      "date": "2024-11-13T08:11:33.126Z",
+      "notes": "LUXEMBORG",
+      "position": {
+        "lat": "49.52520834197442",
+        "lng": "6.284179687500001"
+      }
+    },
+    {
+      "id": "9183",
       "cityName": "Nijar",
-      "country": "Spain",
+      "countryName": "Spain",
       "emoji": "🇪🇸",
-      "date": "2023-04-03T07:47:59.202Z",
+      "date": "2024-11-13T08:15:03.802Z",
       "notes": "",
       "position": {
-        "lat": "36.967508314568164",
-        "lng": "-2.13128394200588"
-      },
-      "id": 98443198
+        "lat": "36.9589454697453",
+        "lng": "-2.169284820556641"
+      }
     }
   ]
 }
