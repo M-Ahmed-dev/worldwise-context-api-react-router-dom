@@ -1,4 +1,10 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Product from "./pages/Product";
 import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
@@ -10,7 +16,19 @@ import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./components/context/CitiesContext";
-import { AuthProvider } from "./components/context/FakeAuthContext";
+import { AuthProvider, useAuth } from "./components/context/FakeAuthContext";
+import { useEffect } from "react";
+
+function ProtectedRoute({ children }) {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate("/");
+  }, [isAuthenticated, navigate]);
+
+  return isAuthenticated ? children : null;
+}
 
 function App() {
   return (
@@ -23,7 +41,14 @@ function App() {
             <Route path="product" element={<Product />} />
             <Route path="login" element={<Login />} />
             {/* Nested routes */}
-            <Route path="app" element={<AppLayout />}>
+            <Route
+              path="app"
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route
                 index
                 // element={<CityList cities={cities} isLoading={isLoading} />}
